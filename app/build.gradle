@@ -28,15 +28,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     packagingOptions {
-        exclude 'META-INF/proguard/androidx-annotations.pro'
-        exclude 'META-INF/androidx.exifinterface_exifinterface.version'
+        resources {
+            excludes += ['META-INF/proguard/androidx-annotations.pro', 'META-INF/androidx.exifinterface_exifinterface.version']
+        }
     }
+
 
     buildFeatures {
         viewBinding true
     }
+    namespace 'example.jllarraz.com.passportreader'
 }
 
 dependencies {
